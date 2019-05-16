@@ -1,0 +1,1 @@
+Basic product definitions. (eg. html initial settings etc.)

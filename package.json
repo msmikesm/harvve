@@ -1,0 +1,47 @@
+{
+    "name": "harvve",
+    "version": "1.0.0",
+    "description": "song site",
+    "main": "dist/js/index.js",
+    "scripts": {
+        "server:ts": "webpack-dev-server --config webpack.dev.js",
+        "watch:css": "node-sass src/sass/main.scss dist/client/css/style.css -w",
+        "dev:ts": "webpack --config webpack.dev.js",
+        "server:prod": "webpack-dev-server --config webpack.config.js",
+        "build:prod": "webpack --mode production --config webpack.config.js",
+        "compile:css": "node-sass src/sass/main.scss dist/client/css/style.comp.css",
+        "prefix:css": "postcss --use autoprefixer -b 'last 5 version' dist/client/css/style.comp.css -o dist/client/css/style.prefix.css",
+        "compress:css": "node-sass dist/client/css/style.prefix.css dist/client/css/style.min.css --output-style compressed",
+        "start:server": "node dist/server.js",
+        "build:server": "tsc -p tsconfig.srv.json",
+        "start": "npm-run-all --parallel server:ts watch:css",
+        "build": "npm-run-all compile:css prefix:css compress:css dev:ts build:prod build:server"
+    },
+    "keywords": [
+        "TS",
+        "SASS",
+        "Webpack",
+        "Babel"
+    ],
+    "author": "Michal Siemienowicz",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/polyfill": "^7.4.4"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "autoprefixer": "^9.5.1",
+        "babel-loader": "^8.0.5",
+        "html-webpack-plugin": "^3.2.0",
+        "node-sass": "^4.12.0",
+        "npm-run-all": "^4.1.5",
+        "postcss-cli": "^6.1.2",
+        "ts-loader": "^5.4.4",
+        "typescript": "^3.4.5",
+        "webpack": "^4.30.0",
+        "webpack-cli": "^3.3.1",
+        "webpack-dev-server": "^3.3.1"
+    }
+}

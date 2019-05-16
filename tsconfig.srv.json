@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "target": "es5",
+        "allowJs": true,
+        "removeComments": true,
+        "outDir": "dist"
+    },
+    "include": [
+        "server/**/*"
+    ],
+    "exclude": [
+        "src",
+        "node_modules"
+    ]
+}
