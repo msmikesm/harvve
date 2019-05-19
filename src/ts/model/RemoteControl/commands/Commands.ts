@@ -1,4 +1,4 @@
-export class Comends {
+export class Commands {
     mediaElement: any;
 
     constructor(element: any) {
@@ -17,7 +17,6 @@ export class Comends {
      */
     public stop() {
         this.mediaElement.pause();
-        this.mediaElement.currentTime = 0;
     }
 
     /**

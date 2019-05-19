@@ -5,3 +5,29 @@ $font-primary: "Indie Flower", cursive;
 
 $color-logo: #00c3ff;
 $color-logo-2: #ffff1c;
+$color-grey-light: #f7f7f7;
+$color-grey-light-2: #e7e7e7;
+$color-grey-dark: #a5a5a5;
+$color-grey-dark-2: #333;
+$color-grey-dark-3: rgb(92, 92, 92);
+
+$color-transparent-white: rgba(255, 255, 255, .5);
+$color-transparent-white-2: rgba(255, 255, 255, .8);
+
+// Gradients
+$gradient-global: linear-gradient(to right bottom, rgb(43, 43, 43), rgb(43, 43, 43));
+
+//Shadows
+$shadow-first: 0px 1px 5px 0px $color-grey-dark;
+$shadow-second: 0px 1px 2px 2px #0000;
+$shadow-third: 1px 2px 18px 3px rgba(43, 43, 43, 0.603);
+
+// Responsive Breakpoints
+$bp-tv: 81.25em; //1300/16 = 81.25
+$bp-largest: 75em; // 1200/16 = 75
+$bp-large: 62.5em; // 1000px/16 = 62.5em
+$bp-normal: 56.3em; // 900/16 = 56.3
+$bp-medium: 50em; // 800px/16 = 50em
+$bp-small: 37.5em; // 600/16 = 37.5
+$bp-small-2: 31.3em; //500/16 = 31.3em;
+$bp-smallest: 25em; // 400/16 = 25
