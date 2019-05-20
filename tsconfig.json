@@ -5,10 +5,11 @@
         "target": "es6",
         "allowJs": true
     },
-    "include": [
-        "src"
-    ],
     "exclude": [
         "server",
+        "node_modules",
+        "dist",
+        "webpack.config.js",
+        "webpack.dev.js"
     ]
 }
