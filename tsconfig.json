@@ -5,7 +5,10 @@
         "target": "es6",
         "allowJs": true
     },
+    "include": [
+        "src"
+    ],
     "exclude": [
-        "server"
+        "server",
     ]
 }

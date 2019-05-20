@@ -1,19 +1,20 @@
 import { RemoteControl } from "./model/RemoteControl/RemoteControl";
 import { Voice } from "./model/Voice/Voice";
-import { commands, speeches, elements } from "./model/base";
+import { commands, speeches, elements, clear, setDocLang } from "./model/base";
 
 import { helpItem } from "./view/helpItem";
 
 
 
 class Harvve {
-    hv: Voice = new Voice('en-US');
-    rc: RemoteControl = new RemoteControl();
-
     public state = {
         lang: 'en-US',
         speech: {}
     };
+
+    public rc = new RemoteControl();
+    public hv = new Voice(this.state.lang);
+
 
     /**
      * live - start app
@@ -48,6 +49,7 @@ class Harvve {
 
     }
 
+
     /**
      * Switch Languages
      * @param code state.lang
@@ -57,11 +59,17 @@ class Harvve {
             case 'ENGLISH':
                 this.state.lang = 'en-US';
                 this.rc.reco.lang = this.state.lang;
-                this.state.speech = speeches.EN;
-                elements.helpList.innerHTML = '';
 
-                commands.EN.media.map(element => {
-                    helpItem(element);
+                setDocLang(this.state.lang);
+
+                //! REMOVE
+                console.info(document.documentElement.lang);
+
+                this.state.speech = speeches.EN;
+                clear(null, elements.helpList);
+                // elements.helpList.innerHTML = '';
+                commands.EN.media.map(elements => {
+                    helpItem(elements);
                 });
                 break;
 
@@ -69,10 +77,15 @@ class Harvve {
                 this.state.lang = 'pl-PL';
                 this.rc.reco.lang = this.state.lang;
                 this.state.speech = speeches.PL;
-                elements.helpList.innerHTML = '';
 
-                commands.PL.media.map(element => {
-                    helpItem(element);
+                setDocLang(this.state.lang);
+
+                //! REMOVE
+                console.info(document.documentElement.lang);
+
+                clear(null, elements.helpList);
+                commands.PL.media.map(elements => {
+                    helpItem(elements);
                 });
                 break;
             default:
@@ -129,7 +142,7 @@ class Harvve {
 if(window.chrome && (window.chrome.webstore || window.chrome.runtime)) {
 
     //? WELCOME MESSAGE
-    // hv.speech(`Hey, I'm Harvve. To move around the site, talk to me. If you don't know what I can do, just say: HELP. Miłej zabawy.`);
+    
 
     let harv = new Harvve();
     harv.live();
