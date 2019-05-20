@@ -71,6 +71,9 @@ body {
   .help__item {
     margin: 1rem; }
 
+.command {
+  display: none; }
+
 .container {
   display: flex;
   flex-direction: column;

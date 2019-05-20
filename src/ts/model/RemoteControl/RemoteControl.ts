@@ -5,20 +5,15 @@ import { elements } from "../base";
 export class RemoteControl {
     // @ts-ignore: Unreachable code error
     reco: webkitSpeechRecognition = new webkitSpeechRecognition();
-    lang: string;
-
-    constructor(language: string) {
-        this.lang = language;
-    }
 
     /**
      * startReco
      */
     public startReco() {
 
-        this.reco.continuous = true;
-        this.reco.interimResults = true;
-        this.reco.lang = this.lang;
+        // this.reco.continuous = true;
+        // this.reco.interimResults = true;
+        // this.reco.lang = 'en-US';
         this.reco.start();
 
         // reco.onresult = (e: any) => {
@@ -63,31 +58,17 @@ export class RemoteControl {
         // reco.onend = () => {
         //     reco.start();
         // };
-
-    }
-
-    /**
-     * result
-     */
-    public result() {
-        this.reco.addEventListener('result', (e: any) => {
-            for (let i = e.resultIndex; i < e.results.length; ++i) {
-                if(e.results[i].isFinal) {
-                    let res = e.results[i][0].transcript.trim().toUpperCase();
-                    //! TEST
-                    console.log(res);
-                    return res;
-                }
-            }
-        });
     }
 
     /**
      * work
      */
-    public work(a: boolean) {
-        a ? this.reco.onend = () => this.reco.start() : null;
-        // this.reco.onend = () => this.reco.start();
+    public work(run: boolean) {
+        run ? this.reco.onend = () => this.reco.start():
+        this.reco.onend = () => this.reco.stop();
     }
 
+    public language(code: string) {
+        this.reco.lang = code;
+    }
 }
