@@ -13,7 +13,7 @@ module.exports = {
         contentBase: './dist/client',
         // https: true,
         host: '0.0.0.0',
-        port: 8080,
+        port: 1337,
         open: true,
         // hot: true,
         // useLocalIp: true,

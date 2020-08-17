@@ -14,7 +14,7 @@ module.exports = {
         watchContentBase: true,
         // https: true,
         // host: '0.0.0.0',
-        port: 8080,
+        port: 1337, //8080
         open: true,
         // useLocalIp: true,
         // bonjour: true,

@@ -1,4 +1,3 @@
-import * as fs from "fs";
 
 interface conf {
   hostname: string;
@@ -8,6 +7,6 @@ interface conf {
 
 export const serverConf: conf = {
   hostname: "127.0.0.1",
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 1337
 };
 

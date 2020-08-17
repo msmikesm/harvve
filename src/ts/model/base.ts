@@ -4,12 +4,21 @@ export const elements = {
     helpList: document.getElementById('helpList')
 }
 
-export const commands = {
+export const commandCollection = {
     PL: {
-        media: ['Pomoc: otwiera / zamyka', 'Start: rozpoczyna', 'Stop: zatrzymuje', 'Wycisz: wycisza dźwięk', 'Przywróć: przywraca dźwięk']
+        media: ['POMOC: otwórz / zamknij', 'START', 'STOP', 'WYCISZ', 'GŁOS']
     },
     EN: {
-        media: [ 'Help: open / closed', 'Play', 'Stop', 'Mute', 'Unmute']
+        media: [ 'HELP: open / closed', 'PLAY', 'STOP', 'MUTE', 'UNMUTE']
+    }
+}
+
+export const testCommands = {
+    PL: {
+        media: ['POMOC', 'START', 'STOP', 'WYCISZ', 'GŁOS']
+    },
+    EN: {
+        media: [ 'HELP', 'PLAY', 'STOP', 'MUTE', 'UNMUTE']
     }
 }
 
